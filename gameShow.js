@@ -14,6 +14,7 @@ startButton.addEventListener('click', () => {
 // return a random phrase from an array
 function getRandomPhraseAsArray(phrases) {
     let randomNumber = Math.floor(Math.random() * phrases.length);
+    randomNumber.split('');
     return randomNumber;
 }
 
