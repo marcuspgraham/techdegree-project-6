@@ -22,24 +22,29 @@ function getRandomPhraseAsArray(phrases) {
 getRandomPhraseAsArray(phrases);
 
 // adds the letter of a string to the display
-function addphraseToDispaly(phrases) {
+function addPhraseToDisplay(phrases) {
     // do stuff any arr that is passed in, and add to `#phrase ul`
-    for ( var i = 0; i < phrases.length; i++ ) {
-        const list = phrases[i];
-        list = document.createElement('li');
-        list.push(phrases[i].innerHTML);
-        document.querySelectorAll('#phrase ul').appendChild(list);
+    for (var i = 0; i < phrases.length; i++) {
+        const list = document.createElement('li');
+        list.innerHTML = phrases[i];
+        document.querySelector('#phrase ul').appendChild(list).classList.add('letters');
         
     }
 }
 
-console.log(addphraseToDispaly);
+addPhraseToDisplay(getRandomPhraseAsArray(phrases));
+
 
 // check if a letter is in the phrase
-// function checkLetter(startButton) {
-//     let liElements = ul.getElementsByTagName("li");
-//     let matchFound = null;
-//     for (start_value; start_value < end_value; start_value++) {
-//         answer = answer + start_value;
-//       }
-// }
+function checkletter(startButton) {
+    const liElements = ul.getElementsByTagName('li');
+    const matchFound = null;
+    for (var i = 0; i < phrases.length; i++) {
+        //Do something
+        if (startButton === ) {
+
+        }
+    }
+}
+
+// console.log(phrases[i]);
