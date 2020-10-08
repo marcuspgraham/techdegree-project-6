@@ -37,12 +37,15 @@ addPhraseToDisplay(getRandomPhraseAsArray(phrases));
 
 // check if a letter is in the phrase
 function checkletter(startButton) {
-    const liElements = ul.getElementsByTagName('li');
+    const liElements = document.querySelectorAll('.letter');
     const matchFound = null;
-    for (var i = 0; i < phrases.length; i++) {
+    for (var i = 0; i < liElements.length; i++) {
         //Do something
-        if (startButton === ) {
-
+        if (startButton === liElements[i].textContent) {
+            document.addClass('show');
+            const match = ?
+        } else {
+            
         }
     }
 }
