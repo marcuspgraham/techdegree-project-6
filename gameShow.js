@@ -27,7 +27,7 @@ function addPhraseToDisplay(phrases) {
     for (var i = 0; i < phrases.length; i++) {
         const list = document.createElement('li');
         list.innerHTML = phrases[i];
-        document.querySelector('#phrase ul').appendChild(list).classList.add('letters');
+        document.querySelector('#phrase ul').appendChild(list).classList.add('letter');
         
     }
 }
@@ -47,4 +47,3 @@ function checkletter(startButton) {
     }
 }
 
-// console.log(phrases[i]);
