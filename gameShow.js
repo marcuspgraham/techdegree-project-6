@@ -111,7 +111,7 @@ function checkWin () {
     let show = document.querySelectorAll('.show');
 
     // Check if the length of the 2 variables are the same. If they are, display the win overlay
-    if (letterOne || show) {
+    if (letterOne.length === show.length) {
 
     // Create the win overlay by adding the “win” class to the start overlay.
     overlay.className = 'win';
@@ -137,4 +137,5 @@ function checkWin () {
     overlay.style.display = 'flex';
 
     }
+    
 }
