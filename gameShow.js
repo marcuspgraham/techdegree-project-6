@@ -2,7 +2,7 @@
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const startButton = document.querySelector('.btn__reset');
-const missed = 0;
+let missed = 0;
 const phrases = ['keep your hair on', 
                 'cut and dried', 
                 'by hook or by crook', 
@@ -36,7 +36,7 @@ function addPhraseToDisplay(phrases) {
         const list = document.createElement('li');
         list.innerHTML = phrases[i];
         document.querySelector('#phrase ul').appendChild(list)
-        if (phrases[i] !== '') {
+        if (phrases[i] !== ' ') {
             list.className = 'letter';
         } else {
             list.className = 'space';
@@ -92,6 +92,7 @@ qwerty.addEventListener('click', (e) => {
             let lostHeart = document.querySelectorAll('.tries img');
             lostHeart[0].src = 'images/lostHeart.png';
             liveHeart[0].className = '';
+            missed += 1;
         } 
  
 }
@@ -139,3 +140,10 @@ function checkWin () {
     }
     
 }
+
+// add a screen to the success and failure screens 
+
+// generate a new random phrase 
+let randomPhrase = 
+// set the number of misses to zero
+let missed = 0;
