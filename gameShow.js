@@ -14,7 +14,18 @@ const phrases = ['keep your hair on',
 startButton.addEventListener('click', () => {
     // Hide overlay screen
     overlay.style.display = 'none';
+    // set the number of misses to zero
+    let missed = 0;
+    // remove phrase il elements
+    var removeIl = document.getElementById('phrase');   
+    removeIl.removeChild(removeIl.childNodes);
+    // restore liveHeart images
+    lostHeart[0].src = 'images/lostHeart.png';
+    // remove the chosen class and disabled attribute from qwerty buttons
+    document.querySelector('chosen')[0].removeAttribute('class');
 });
+
+
 
 
 // return a random phrase from an array
@@ -141,9 +152,3 @@ function checkWin () {
     
 }
 
-// add a screen to the success and failure screens 
-
-// generate a new random phrase 
-let randomPhrase = 
-// set the number of misses to zero
-let missed = 0;
