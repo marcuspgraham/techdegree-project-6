@@ -17,10 +17,13 @@ startButton.addEventListener('click', () => {
     // set the number of misses to zero
     let missed = 0;
     // remove phrase il elements
-    var removeIl = document.getElementById('phrase');   
-    removeIl.removeChild(removeIl.childNodes);
+    let phraseUl = document.querySelector('#phrase ul'); 
+    phraseUl.innerHTML = '';
     // restore liveHeart images
-    lostHeart[0].src = 'images/lostHeart.png';
+    const heartImg = 'images/lostHeart.png';
+    for ( let = i; i < heartImg; i += 1 ) {
+        
+    }
     // remove the chosen class and disabled attribute from qwerty buttons
     document.querySelector('chosen')[0].removeAttribute('class');
 });
