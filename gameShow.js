@@ -20,12 +20,15 @@ startButton.addEventListener('click', () => {
     let phraseUl = document.querySelector('#phrase ul'); 
     phraseUl.innerHTML = '';
     // restore liveHeart images
-    const heartImg = 'images/lostHeart.png';
-    for ( let = i; i < heartImg; i += 1 ) {
-        
+    let lives = document.querySelectorAll('#scoreboard ol li img');
+    for ( let i = 0; i < lives.length; i++ ) {
+        lives[i].setAttribute('src', 'images/liveHeart.png');
     }
     // remove the chosen class and disabled attribute from qwerty buttons
-    document.querySelector('chosen')[0].removeAttribute('class');
+    let chosenElement = document.getElementById('chosen');
+    for ( let i = 0; i < chosenElement.length; i++ ) {
+        element[i].className.remove('chosen');
+    }
 });
 
 
