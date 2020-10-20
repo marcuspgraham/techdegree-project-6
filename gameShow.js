@@ -18,20 +18,19 @@ startButton.addEventListener('click', () => {
     let missed = 0;
     // remove phrase il elements
     let phraseUl = document.querySelector('#phrase ul'); 
-    phraseUl.innerHTML = '';
+    phraseUl.innerHTML = li;
     // restore liveHeart images
     let lives = document.querySelectorAll('#scoreboard ol li img');
     for ( let i = 0; i < lives.length; i++ ) {
         lives[i].setAttribute('src', 'images/liveHeart.png');
     }
     // remove the chosen class and disabled attribute from qwerty buttons
-    let chosenElement = document.getElementById('chosen');
+    let chosenElement = document.querySelectorAll('.chosen');
     for ( let i = 0; i < chosenElement.length; i++ ) {
-        element[i].className.remove('chosen');
+        chosenElement[i].classList.remove('chosen');
     }
+
 });
-
-
 
 
 // return a random phrase from an array
@@ -149,7 +148,7 @@ function checkWin () {
     overlay.className = 'lose';
     
     // Change the headline text of the start overlay to show a person lost.
-    document.querySelector('h2.title').innerHTML = 'You Lose';
+    document.querySelector('h2.title').innerHTML = 'You Lose';    
 
     // Change the display property of the overlay to “flex”
     overlay.style.display = 'flex';
@@ -157,4 +156,6 @@ function checkWin () {
     }
     
 }
+
+
 
