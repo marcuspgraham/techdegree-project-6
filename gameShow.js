@@ -18,7 +18,7 @@ startButton.addEventListener('click', () => {
     let missed = 0;
     // remove phrase il elements
     let phraseUl = document.querySelector('#phrase ul'); 
-    phraseUl.innerHTML = li;
+    phraseUl.innerHTML = '';
     // restore liveHeart images
     let lives = document.querySelectorAll('#scoreboard ol li img');
     for ( let i = 0; i < lives.length; i++ ) {
@@ -27,11 +27,12 @@ startButton.addEventListener('click', () => {
     // remove the chosen class and disabled attribute from qwerty buttons
     let chosenElement = document.querySelectorAll('.chosen');
     for ( let i = 0; i < chosenElement.length; i++ ) {
-        chosenElement[i].classList.remove('chosen');
+        chosenElement[i].classList.remove('chosen').disabled = false;
     }
 
 });
 
+addPhraseToDisplay(getRandomPhraseAsArray(phrases));
 
 // return a random phrase from an array
 function getRandomPhraseAsArray(phrases) {
@@ -60,7 +61,7 @@ function addPhraseToDisplay(phrases) {
     }
 }
 
-addPhraseToDisplay(getRandomPhraseAsArray(phrases));
+
 
 
 
@@ -156,6 +157,8 @@ function checkWin () {
     }
     
 }
+
+
 
 
 
