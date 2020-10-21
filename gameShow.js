@@ -15,7 +15,7 @@ startButton.addEventListener('click', () => {
     // Hide overlay screen
     overlay.style.display = 'none';
     // set the number of misses to zero
-    let missed = 0;
+    missed = 0;
     // remove phrase il elements
     let phraseUl = document.querySelector('#phrase ul'); 
     phraseUl.innerHTML = '';
@@ -27,12 +27,13 @@ startButton.addEventListener('click', () => {
     // remove the chosen class and disabled attribute from qwerty buttons
     let chosenElement = document.querySelectorAll('.chosen');
     for ( let i = 0; i < chosenElement.length; i++ ) {
-        chosenElement[i].classList.remove('chosen').disabled = false;
+        chosenElement[i].classList.remove('chosen');
+        chosenElement[i].disabled = false;
     }
-
+    addPhraseToDisplay(getRandomPhraseAsArray(phrases));
 });
 
-addPhraseToDisplay(getRandomPhraseAsArray(phrases));
+
 
 // return a random phrase from an array
 function getRandomPhraseAsArray(phrases) {
@@ -105,10 +106,8 @@ qwerty.addEventListener('click', (e) => {
 
         // if no letter found remove one heart, increment missed counter
         if (letterFound === null) {  
-            let liveHeart = document.querySelectorAll('.tries');
             let lostHeart = document.querySelectorAll('.tries img');
-            lostHeart[0].src = 'images/lostHeart.png';
-            liveHeart[0].className = '';
+            lostHeart[missed].src = 'images/lostHeart.png';
             missed += 1;
         } 
  
